@@ -1,0 +1,23 @@
+Sidenote:
+----------
+I added mysqldb.exe to my PATH variables in Windows and simply went to cmd and call:
+
+    mysql -u root -p
+
+,where "root" is the username you gave your MySQL during its installation and when you hit Enter, it would ask you for the password from the MySQL installation too.
+
+=====================================================================================================
+
+How to run 'mysql' command directly through cmd:
+-------------------------------------------------
+Go to your system variables and in 'User variables' for add:
+
+    %MYSQL_HOME%\bin;
+
+in the end of `Path` entry. After that, under System variables, click 'New...' and on 'Variable Name' type:
+
+    MYSQL_HOME
+
+and on 'Variable value' type:
+
+    C:\xampp\mysql\bin
