@@ -15,7 +15,7 @@ database = 'sprint'
 #     Trusted_Connection=yes;'
 # )
 
-connection_string = 'Driver={ODBC Driver 17 for SQL Server};Server=tcp:newserver789.database.windows.net,1433;Database=sprint;Uid=adminuser;Pwd=Azure@2022;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+connection_string = 'Driver={ODBC Driver 13 for SQL Server};Server=tcp:newserver789.database.windows.net,1433;Database=sprint;Uid=adminuser;Pwd=Azure@2022;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
 
 cnxn: pyodbc.Connection = pyodbc.connect(connection_string)
 
