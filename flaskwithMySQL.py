@@ -4,15 +4,28 @@ import textwrap
 import pyodbc
 app = Flask(__name__)
  
-server = 'LAPTOP-J4U5D1OV\SQLEXPRESS'
+server = 'newserver789.database.windows.net'
 database = 'sprint'
-cnxn = pyodbc.connect(
-    'DRIVER={ODBC Driver 17 for SQL Server}; \
-    SERVER='+ server +'; \
-    DATABASE='+ database +';\
-    Trusted_Connection=yes;'
-)
-cur = cnxn.cursor()
+# username = 'azureuser'
+# password = 'Azure@2022'
+# cnxn = pyodbc.connect(
+#     'DRIVER={ODBC Driver 17 for SQL Server}; \
+#     SERVER='+ server +'; \
+#     DATABASE='+ database +';\
+#     Trusted_Connection=yes;'
+# )
+
+connection_string = 'Driver={ODBC Driver 17 for SQL Server};Server=tcp:newserver789.database.windows.net,1433;Database=sprint;Uid=adminuser;Pwd=Azure@2022;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;'
+
+cnxn: pyodbc.Connection = pyodbc.connect(connection_string)
+
+
+#create a new cursor object from the connection
+cur: pyodbc.Cursor = cnxn.cursor()
+
+
+
+
 
 #Configure db
 #db = yaml.load(open('db.yaml'))
